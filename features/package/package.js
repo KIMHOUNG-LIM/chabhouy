@@ -52,7 +52,7 @@ const packageData = {
                 { icon: "bi-flower2", label: "Sea Salt" },
                 { icon: "bi-tree", label: "Palm Sugar" },
                 { icon: "bi-sun", label: "Kampot Pepper" },
-                { icon: "bi-drop", label: "Coconut Oil" },
+                { icon: "bi-tree", label: "Coconut Oil" },
                 { icon: "bi-flower1", label: "Cassava Starch" },
                 { icon: "bi-basket", label: "Mung Bean Flour" }
             ]
@@ -169,7 +169,7 @@ const packageData = {
                 { icon: "bi-moisture", label: "Rice Noodle" },
                 { icon: "bi-flower3", label: "Spinach Noodle" },
                 { icon: "bi-basket2", label: "Wheat Noodle" },
-                { icon: "bi-carrot", label: "Veggie Noodle" },
+                { icon: "bi-flower", label: "Veggie Noodle" },
                 { icon: "bi-bag", label: "Seasoning" }
             ]
         }
