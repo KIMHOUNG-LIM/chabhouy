@@ -1,0 +1,50 @@
+/* ==========================================================================
+   ChabHouy — Our Story Feature Styles
+   ========================================================================== */
+
+.story-page {
+   background-color: var(--color-bg);
+}
+
+.story-hero__card {
+   background-color: var(--color-white);
+   border: 1.5px solid #E2E8F0 !important;
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow-medium);
+}
+
+.card-soft {
+   background-color: var(--color-white);
+   border: 1.5px solid #E2E8F0 !important;
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow-soft);
+   transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+}
+
+.card-soft:hover {
+   transform: translateY(-4px);
+   border-color: var(--color-light-green) !important;
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.farmer-card:hover .farmer-avatar {
+   transform: scale(1.08);
+   transition: transform var(--transition-fast);
+}
+
+.max-w-600 {
+   max-width: 600px;
+}
+
+/* Call to Action Banner High-Contrast Solid White Text */
+.story-cta {
+   background-color: var(--color-dark-green) !important;
+   color: #FFFFFF !important;
+}
+
+.story-cta h2,
+.story-cta p,
+.story-cta .lead {
+   color: #FFFFFF !important;
+   opacity: 1 !important;
+}

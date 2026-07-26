@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Chabhouy — Navigation Bar Styles
+   ========================================================================== */
+
+/* Main Header Container */
+.chb-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-cream-soft);
+    border-bottom: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-med), background-color var(--transition-med), padding var(--transition-med);
+}
+
+/* Header state when page is scrolled */
+.chb-navbar.is-scrolled {
+    box-shadow: var(--shadow-soft);
+    background-color: rgba(241, 235, 220, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+/* Inner Navigation Layout */
+.chb-navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: var(--nav-height);
+}
+
+/* Pill Buttons Shared Base */
+.chb-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1.5px solid var(--color-border);
+    background-color: var(--color-white);
+    border-radius: var(--radius-pill);
+    transition: all var(--transition-fast);
+}
+
+/* Primary Desktop Navigation Group */
+.chb-navbar__links {
+    display: flex;
+    gap: 0.6rem;
+    border: 1.5px solid var(--color-border);
+    background-color: var(--color-white);
+    border-radius: var(--radius-pill);
+    padding: 0.35rem;
+}
+
+.chb-pill--link {
+    border: none;
+    padding: 0.55rem 1.1rem;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+}
+
+.chb-pill--link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-cream);
+}
+
+.chb-pill--link.is-active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Brand Logo & Wordmark */
+.chb-navbar__brand {
+    flex-shrink: 0;
+}
+
+.chb-pill--brand {
+    padding: 0.5rem 1.2rem 0.5rem 0.6rem;
+    gap: 0.6rem;
+}
+
+.chb-logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chb-navbar__wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-primary);
+}
+
+/* Right Navigation Action Items */
+.chb-navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.chb-icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.05rem;
+    transition: all var(--transition-fast);
+}
+
+.chb-icon-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.chb-pill--action {
+    padding: 0.55rem 1.05rem;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    color: var(--color-primary);
+}
+
+.chb-pill--action i {
+    font-size: 1.05rem;
+}
+
+.chb-pill--action:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-1px);
+}
+
+/* Mobile Hamburger Toggle Icon */
+.chb-hamburger {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.chb-hamburger span {
+    width: 18px;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+/* Animated Hamburger Open State */
+.chb-hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.chb-hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.chb-hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Search Bar Dropdown */
+.chb-search-bar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-med), padding var(--transition-med);
+    background-color: var(--color-cream-soft);
+    border-bottom: 1px solid transparent;
+}
+
+.chb-search-bar.is-open {
+    max-height: 90px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.chb-search-bar__box {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 0.65rem 1.2rem;
+    margin: 0.85rem 0;
+    color: var(--color-ink-soft);
+}
+
+.chb-search-bar__box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: var(--fs-sm);
+}
+
+/* Mobile Navigation Panel */
+.chb-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    padding: 0.75rem 1.25rem 1.25rem;
+}
+
+.chb-mobile-menu a {
+    padding: 0.75rem 0.25rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    border-radius: var(--radius-sm);
+}
+
+.chb-mobile-menu a:hover,
+.chb-mobile-menu a.is-active {
+    color: var(--color-primary);
+}
+
+.chb-mobile-menu hr {
+    border-color: var(--color-border);
+    margin: 0.4rem 0;
+}
+
+.chb-mobile-menu.is-open {
+    display: flex;
+}
+
+/* Tablet & Mobile Media Queries */
+@media (max-width: 991.98px) {
+    .chb-navbar__links {
+        display: none;
+    }
+
+    .chb-pill--action span {
+        display: none;
+    }
+
+    .chb-pill--action {
+        padding: 0.6rem;
+    }
+
+    .chb-hamburger {
+        display: flex;
+    }
+
+    .chb-navbar__brand {
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .chb-pill--brand {
+        padding: 0.35rem 0.75rem 0.35rem 0.45rem;
+        gap: 0.4rem;
+    }
+
+    .chb-logo {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .chb-navbar__wordmark {
+        display: inline-block !important;
+        font-size: 0.95rem;
+    }
+}

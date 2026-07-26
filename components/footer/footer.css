@@ -1,0 +1,513 @@
+/* ==========================================================================
+   Chabhouy — Footer Component Styles
+   ========================================================================== */
+
+/* Outer Footer Container */
+.chb-footer {
+    background-color: var(--color-cream-soft);
+    color: var(--color-ink-soft);
+    margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+/* Trust Badges Strip */
+.chb-footer__trust {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.chb-footer__trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+    padding: 2.25rem 0;
+}
+
+.chb-trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.chb-trust-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--color-cream);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+.chb-trust-icon--sm {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+}
+
+.chb-trust-item h6 {
+    margin-bottom: 0.15rem;
+    font-size: var(--fs-md);
+}
+
+.chb-trust-item p {
+    margin: 0;
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+}
+
+/* Main Footer Content Grid */
+.chb-footer__main {
+    padding: 3rem 0;
+}
+
+.chb-footer__grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+    gap: 2.5rem;
+}
+
+/* Brand Overview Column */
+.chb-footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.1rem;
+}
+
+.chb-footer__wordmark {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.chb-footer__brand-en {
+    font-family: var(--font-display);
+    color: var(--color-brown);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 0.9rem;
+}
+
+.chb-footer__desc {
+    font-size: var(--fs-sm);
+    max-width: 34ch;
+}
+
+.chb-footer__khmer-note {
+    color: var(--color-light-green);
+    font-size: var(--fs-md);
+    margin-top: 1rem;
+}
+
+/* Footer Link Columns */
+.chb-footer__col h6 {
+    color: var(--color-primary);
+    font-size: var(--fs-md);
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.chb-footer__col .leaf-icon {
+    color: var(--color-light-green);
+    font-size: 0.9rem;
+}
+
+.chb-footer__col a {
+    display: block;
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+    padding: 0.4rem 0;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.chb-footer__col a:hover {
+    color: var(--color-primary);
+    transform: translateX(3px);
+}
+
+/* Newsletter Subscription */
+.chb-footer__newsletter {
+    position: relative;
+}
+
+.chb-footer__newsletter p {
+    font-size: var(--fs-sm);
+    margin-bottom: 1rem;
+}
+
+.chb-newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--color-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 0.35rem 0.35rem 0.35rem 1.1rem;
+}
+
+.chb-newsletter-form input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: var(--fs-sm);
+    min-width: 0;
+}
+
+.chb-newsletter-form button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.chb-newsletter-form button:hover {
+    background-color: var(--color-dark-green-2);
+    transform: scale(1.06);
+}
+
+/* Bottom Actions Bar */
+.chb-footer__bottom {
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+}
+
+.chb-footer__bottom-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 0.8fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.chb-footer__accept span:first-child {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--color-ink-soft);
+    margin-bottom: 0.5rem;
+}
+
+.chb-pay-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chb-pay-badge {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-fast);
+}
+
+.chb-pay-badge i {
+    font-size: 1rem;
+    color: var(--color-primary);
+}
+
+.chb-pay-badge:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.chb-footer__help {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.chb-footer__help h6 {
+    margin: 0;
+    font-size: var(--fs-sm);
+}
+
+.chb-footer__help p {
+    margin: 0;
+    font-size: var(--fs-xs);
+}
+
+.chb-footer__social {
+    text-align: right;
+}
+
+.chb-footer__social>span {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--color-ink-soft);
+    margin-bottom: 0.5rem;
+}
+
+.chb-social-icons {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-end;
+}
+
+.chb-social-icons a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.chb-social-icons a:hover {
+    background-color: var(--color-brown);
+    transform: translateY(-3px);
+}
+
+/* Legal & Copyright Section */
+.chb-footer__legal {
+    background-color: var(--color-dark-green);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.chb-footer__legal-inner {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: var(--fs-xs);
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.chb-footer__legal-divider {
+    opacity: 0.5;
+}
+
+/* Responsive Styles for Footer */
+@media (max-width: 991.98px) {
+    .chb-footer__trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chb-footer__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .chb-footer__bottom-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .chb-footer__social {
+        text-align: center;
+    }
+
+    .chb-social-icons {
+        justify-content: center;
+    }
+
+    .chb-footer__help {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .chb-footer__trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chb-footer__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .chb-footer .container-xl {
+        padding-left: 1.15rem !important;
+        padding-right: 1.15rem !important;
+    }
+
+    .chb-footer__trust-grid {
+        gap: 1rem;
+        padding: 1.5rem 0.25rem;
+    }
+
+    .chb-trust-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
+    }
+
+    .chb-trust-item h6 {
+        font-size: var(--fs-sm);
+    }
+
+    .chb-trust-item p {
+        font-size: var(--fs-xs);
+    }
+
+    .chb-footer__main {
+        padding: 2rem 0.25rem;
+    }
+
+    .chb-footer__grid {
+        gap: 1.5rem;
+    }
+
+    .chb-footer__desc {
+        font-size: var(--fs-xs);
+        max-width: 100%;
+    }
+
+    .chb-footer__wordmark {
+        font-size: 1.3rem;
+    }
+
+    .chb-footer__brand-en {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .chb-footer__col h6 {
+        font-size: var(--fs-sm);
+        margin-bottom: 0.75rem;
+    }
+
+    .chb-footer__col a {
+        font-size: var(--fs-xs);
+        padding: 0.3rem 0;
+    }
+
+    .chb-newsletter-form {
+        padding: 0.25rem 0.25rem 0.25rem 0.85rem;
+    }
+
+    .chb-newsletter-form input {
+        font-size: var(--fs-xs);
+    }
+
+    .chb-newsletter-form button {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    .chb-footer__bottom {
+        padding: 1.25rem 0.25rem;
+    }
+
+    .chb-pay-icons {
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    .chb-pay-badge {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.68rem;
+    }
+
+    .chb-footer__legal-inner {
+        padding: 0.75rem 0.25rem;
+        font-size: 0.68rem;
+        gap: 0.4rem;
+    }
+}
+
+/* Contact Us Modal Overlay & Card */
+.chb-contact-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(22, 38, 26, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 1050;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.chb-contact-modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chb-contact-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.92);
+    width: 90%;
+    max-width: 480px;
+    z-index: 1060;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chb-contact-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.chb-contact-modal__card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: var(--radius-lg, 1.25rem);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+    padding: 1.75rem 1.5rem;
+    position: relative;
+}
+
+.chb-contact-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chb-contact-modal__close:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border-color: var(--color-primary);
+}
+
+.chb-contact-icon-bounce {
+    animation: chbBounce 2s infinite;
+}
+
+@keyframes chbBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}

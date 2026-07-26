@@ -1,0 +1,57 @@
+:root {
+  /* Brand colors */
+  --color-cream: #F8F4EC;
+  --color-cream-soft: #F1EBDC;
+  --color-dark-green: #355E3B;
+  --color-dark-green-2: #2A4A2F;
+  --color-light-green: #7FAE6A;
+  --color-brown: #8C6239;
+  --color-brown-light: #A87D52;
+
+  /* Neutrals */
+  --color-ink: #23281F;
+  --color-ink-soft: #4B5245;
+  --color-white: #FFFFFF;
+  --color-border: #E4DCC8;
+
+  /* Semantic */
+  --color-primary: var(--color-dark-green);
+  --color-accent: var(--color-light-green);
+  --color-highlight: var(--color-brown);
+  --color-bg: var(--color-cream);
+  --color-bg-alt: var(--color-cream-soft);
+
+  /* Typography */
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", "Segoe UI", -apple-system, sans-serif;
+  --font-khmer: "Noto Serif Khmer", "Khmer OS", serif;
+
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.9rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-soft: 0 4px 20px rgba(53, 94, 59, 0.08);
+  --shadow-medium: 0 10px 30px rgba(53, 94, 59, 0.12);
+  --shadow-lift: 0 16px 40px rgba(53, 94, 59, 0.18);
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s var(--ease);
+  --transition-med: 0.35s var(--ease);
+
+  /* Layout */
+  --container-max: 1320px;
+  --nav-height: 84px;
+}

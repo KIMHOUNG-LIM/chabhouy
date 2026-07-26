@@ -1,0 +1,776 @@
+/* ==========================================================================
+   ChabHouy — Product Listing Page
+   Beginner-friendly, commented CSS. Uses tokens from shared/variables.css
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------- */
+/* 1. Category Filter Pills (top of page)                                 */
+/* ---------------------------------------------------------------------- */
+
+.chb-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.chb-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-ink-soft);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chb-filter-btn:hover {
+    border-color: var(--color-light-green);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.chb-filter-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* 2. Mobile Filter Toggle                                                */
+/* ---------------------------------------------------------------------- */
+
+.chb-mobile-filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    white-space: nowrap;
+    box-shadow: var(--shadow-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* 3. Sidebar Filter Panel                                                 */
+/* ---------------------------------------------------------------------- */
+
+.chb-filter-panel {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 1.5rem;
+    position: sticky;
+    top: calc(var(--nav-height) + 1rem);
+}
+
+.chb-filter-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.chb-filter-title {
+    font-size: var(--fs-md);
+    margin-bottom: 0;
+}
+
+.chb-filter-close {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--color-ink-soft);
+    cursor: pointer;
+}
+
+.chb-filter-group {
+    border-top: 1px solid var(--color-border);
+    padding: 1rem 0;
+}
+
+.chb-filter-group:first-of-type {
+    border-top: none;
+}
+
+.chb-filter-group-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    color: var(--color-ink);
+    cursor: pointer;
+    padding: 0.2rem 0;
+}
+
+.chb-filter-group-head i {
+    color: var(--color-brown-light);
+    transition: transform var(--transition-fast);
+    font-size: 0.85rem;
+}
+
+.chb-filter-group-head.collapsed i {
+    transform: rotate(-90deg);
+}
+
+.chb-filter-group-body {
+    margin-top: 0.75rem;
+    overflow: hidden;
+    transition: max-height var(--transition-med);
+}
+
+.chb-filter-group-body.collapsed {
+    max-height: 0 !important;
+    margin-top: 0;
+}
+
+/* Checkbox rows (ingredients / province) */
+.chb-check-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+}
+
+.chb-check-row input[type="checkbox"] {
+    accent-color: var(--color-primary);
+    width: 16px;
+    height: 16px;
+    margin-right: 0.6rem;
+    cursor: pointer;
+}
+
+.chb-check-row .chb-check-label {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.chb-check-row .chb-check-count {
+    color: var(--color-brown-light);
+    font-size: var(--fs-xs);
+}
+
+.chb-check-row:hover .chb-check-label {
+    color: var(--color-primary);
+}
+
+.chb-show-more-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    padding: 0.4rem 0 0;
+    cursor: pointer;
+}
+
+/* Price range inputs */
+.chb-price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chb-price-field {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.7rem;
+    flex: 1;
+}
+
+.chb-price-field span {
+    color: var(--color-ink-soft);
+    font-size: var(--fs-sm);
+}
+
+.chb-price-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: var(--fs-sm);
+    font-family: var(--font-body);
+    color: var(--color-ink);
+}
+
+.chb-price-dash {
+    color: var(--color-ink-soft);
+}
+
+.chb-clear-filters {
+    width: 100%;
+    margin-top: 1rem;
+    background: none;
+    border: 1.5px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.7rem;
+    color: var(--color-ink-soft);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all var(--transition-fast);
+}
+
+.chb-clear-filters:hover {
+    border-color: var(--color-highlight);
+    color: var(--color-highlight);
+}
+
+/* Mobile off-canvas backdrop (hidden by default on desktop) */
+.chb-filter-backdrop {
+    display: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 4. Active Filter Chips                                                  */
+/* ---------------------------------------------------------------------- */
+
+.chb-active-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.chb-active-chips:empty {
+    display: none;
+}
+
+.chb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-cream-soft);
+    border: 1px solid var(--color-border);
+    color: var(--color-ink);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius-pill);
+}
+
+.chb-chip button {
+    background: none;
+    border: none;
+    color: var(--color-brown);
+    cursor: pointer;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 5. Grid Toolbar (result count + sort)                                  */
+/* ---------------------------------------------------------------------- */
+
+.chb-grid-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.chb-result-count {
+    margin: 0;
+    color: var(--color-ink-soft);
+    font-size: var(--fs-sm);
+}
+
+.chb-sort-box {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.chb-sort-box label {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+    font-weight: 600;
+}
+
+.chb-sort-box select {
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 0.55rem 1.1rem;
+    font-family: var(--font-body);
+    font-size: var(--fs-sm);
+    color: var(--color-ink);
+    background: var(--color-white);
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 6. Product Grid + Cards                                                 */
+/* ---------------------------------------------------------------------- */
+
+.chb-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.chb-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.chb-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+}
+
+.chb-card-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #E9E2CE 0%, #DCE7D2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.chb-card-media i {
+    font-size: 2.75rem;
+    color: var(--color-brown-light);
+    opacity: 0.6;
+}
+
+.chb-card-media img.chb-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-med, 0.3s ease);
+}
+
+.chb-card:hover .chb-card-media img.chb-card-img {
+    transform: scale(1.06);
+}
+
+.chb-card-badge-group {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.chb-card-badge {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.28rem 0.65rem;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.chb-card-badge.best-seller {
+    background: var(--color-dark-green-2);
+}
+
+.chb-card-badge.discount {
+    background: var(--color-highlight);
+}
+
+.chb-card-wishlist {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-ink-soft);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chb-card-wishlist:hover,
+.chb-card-wishlist.active {
+    color: var(--color-highlight);
+    transform: scale(1.1);
+}
+
+.chb-card-body {
+    padding: 1.1rem 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.chb-card-category {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-light-green);
+    margin-bottom: 0.3rem;
+}
+
+.chb-card-name {
+    font-family: var(--font-display);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+}
+
+.chb-card-desc {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+    margin-bottom: 0.7rem;
+    flex: 1;
+}
+
+.chb-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.7rem;
+}
+
+.chb-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-brown);
+    background: var(--color-cream-soft);
+    border: 1px solid var(--color-border);
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-pill);
+}
+
+.chb-tag.province {
+    color: var(--color-dark-green-2);
+}
+
+.chb-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: var(--fs-xs);
+    color: var(--color-ink-soft);
+    margin-bottom: 0.6rem;
+}
+
+.chb-card-rating .stars {
+    color: #E0A83E;
+}
+
+/* Package-only: included items list */
+.chb-card-included {
+    font-size: var(--fs-xs);
+    color: var(--color-ink-soft);
+    background: var(--color-cream-soft);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.5;
+}
+
+.chb-card-included strong {
+    color: var(--color-ink);
+    display: block;
+    margin-bottom: 0.15rem;
+}
+
+.chb-card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.chb-card-price {
+    font-family: var(--font-display);
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.chb-card-price-unit {
+    font-size: var(--fs-xs);
+    color: var(--color-ink-soft);
+    font-weight: 400;
+}
+
+.chb-card-price-original {
+    font-size: var(--fs-sm);
+    color: var(--color-ink-soft);
+    text-decoration: line-through;
+}
+
+.chb-card-savings {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    color: var(--color-dark-green-2);
+    margin-bottom: 0.8rem;
+}
+
+.chb-card-qty-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.chb-card-qty-stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+
+.chb-card-qty-btn {
+    width: 32px;
+    height: 34px;
+    border: none;
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast);
+}
+
+.chb-card-qty-btn:hover {
+    background-color: var(--color-cream-soft);
+}
+
+.chb-card-qty-val {
+    width: 24px;
+    text-align: center;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--color-ink);
+}
+
+.chb-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.chb-card-actions .btn-brand {
+    flex: 1;
+    justify-content: center;
+    padding: 0.6rem 0.8rem;
+    font-size: var(--fs-xs);
+    white-space: nowrap;
+}
+
+.chb-card-heart {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-ink-soft);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chb-card-heart:hover,
+.chb-card-heart.active {
+    border-color: var(--color-highlight);
+    color: var(--color-highlight);
+}
+
+/* ---------------------------------------------------------------------- */
+/* 7. Empty State                                                          */
+/* ---------------------------------------------------------------------- */
+
+.chb-empty-state {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.chb-empty-state i {
+    font-size: 2.75rem;
+    color: var(--color-brown-light);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.chb-empty-state h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: 0.4rem;
+}
+
+.chb-empty-state p {
+    color: var(--color-ink-soft);
+    margin-bottom: 1.4rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 8. Pagination                                                           */
+/* ---------------------------------------------------------------------- */
+
+.chb-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+}
+
+.chb-pagination:empty {
+    display: none;
+}
+
+.chb-page-btn {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-ink-soft);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.chb-page-btn:hover {
+    border-color: var(--color-light-green);
+    color: var(--color-primary);
+}
+
+.chb-page-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.chb-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Responsive Rules
+   ========================================================================== */
+
+/* ---------- Tablet (<= 991px): stack sidebar above grid, 2-col cards ---- */
+@media (max-width: 991.98px) {
+    .chb-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chb-filter-panel {
+        position: static;
+    }
+}
+
+/* ---------- Mobile (<= 991px): collapsible off-canvas filter panel ------ */
+@media (max-width: 991.98px) {
+    #chbFilterSidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: min(320px, 85vw);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform var(--transition-med);
+        overflow-y: auto;
+        padding: 1.25rem;
+        background: var(--color-bg);
+    }
+
+    #chbFilterSidebar.open {
+        transform: translateX(0);
+    }
+
+    .chb-filter-panel {
+        box-shadow: none;
+        padding: 0.5rem 0;
+    }
+
+    .chb-filter-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(35, 40, 31, 0.45);
+        z-index: 999;
+    }
+
+    .chb-filter-backdrop.open {
+        display: block;
+    }
+}
+
+/* ---------- Small mobile (<= 575px): single-column cards ---------------- */
+@media (max-width: 575.98px) {
+    .chb-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chb-mobile-filter-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .chb-grid-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

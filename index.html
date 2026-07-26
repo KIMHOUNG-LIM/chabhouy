@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChabHouy | Real Ingredients. Real Local.</title>
+  <meta name="description"
+    content="ChabHouy — your small local store for kitchen staples, snack packs and noodle packs, sourced fresh from local farmers.">
+
+  <!-- External Libraries: Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="shared/variables.css">
+  <link rel="stylesheet" href="shared/global.css">
+  <link rel="stylesheet" href="components/navbar/navbar.css">
+  <link rel="stylesheet" href="components/footer/footer.css">
+  <link rel="stylesheet" href="features/home/home.css">
+  <link rel="stylesheet" href="shared/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar Container -->
+  <div id="chbNavbarMount"></div>
+
+  <!-- Main Page Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="chb-hero">
+      <div class="container-xl chb-hero__inner">
+        <div class="chb-hero__copy">
+          <h1 class="chb-hero__title">Real Ingredients.<br>Real Local.</h1>
+          <p class="chb-hero__script">Real Good for You.</p>
+          <p class="chb-hero__desc">
+            Fresh, natural ingredients sourced from local farmers.
+            Quality you can trust, taste you'll love.
+          </p>
+          <a href="/features/package/package.html" class="btn-brand">
+            Shop Now <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <!-- Quick Highlight Badges -->
+          <div class="chb-hero__facts">
+            <div class="chb-hero__fact"><i class="bi bi-leaf"></i>100% Natural</div>
+            <div class="chb-hero__fact"><i class="bi bi-geo-alt"></i>Locally Sourced</div>
+            <div class="chb-hero__fact"><i class="bi bi-shield-check"></i>Quality Guaranteed</div>
+            <div class="chb-hero__fact"><i class="bi bi-heart"></i>Support Local</div>
+          </div>
+        </div>
+
+        <!-- Hero Image Art -->
+        <div class="chb-hero__art">
+          <div class="ph-image" style="height:100%; border-radius: var(--radius-xl); overflow: hidden;">
+            <img src="https://i.pinimg.com/1200x/7e/c9/79/7ec97965ad04c2522d6539a0e6b1fbfc.jpg" alt="ChabHouy Fresh Farm Produce" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="chb-how">
+      <div class="container-xl">
+        <div class="section-head">
+          <span class="eyebrow"><i class="bi bi-stars"></i> How It Works</span>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">Simple steps to get the best from our locals</p>
+        </div>
+
+        <div class="chb-steps">
+          <div class="chb-step">
+            <span class="chb-step__icon"><i class="bi bi-basket"></i><span class="chb-step__num">1</span></span>
+            <h4>Choose Your Ingredients</h4>
+            <p>Pick your favorite natural ingredients from our collection.</p>
+          </div>
+          <div class="chb-step__arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="chb-step">
+            <span class="chb-step__icon"><i class="bi bi-box-seam"></i><span class="chb-step__num">2</span></span>
+            <h4>Select Your Package</h4>
+            <p>The more you buy, the more you save.</p>
+          </div>
+          <div class="chb-step__arrow"><i class="bi bi-arrow-right"></i></div>
+          <div class="chb-step">
+            <span class="chb-step__icon"><i class="bi bi-truck"></i><span class="chb-step__num">3</span></span>
+            <h4>Delivered Fresh to You</h4>
+            <p>Carefully packed and delivered straight to your door.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Packages Section -->
+    <section class="chb-save">
+      <div class="container-xl chb-save__grid">
+        <div class="chb-save__copy">
+          <span class="chb-save__eyebrow">Save More</span>
+          <h2 class="chb-save__title">The More You Buy,<br>The More You Save</h2>
+          <p class="chb-save__desc">Choose the perfect package that fits your needs and budget.</p>
+          <a href="/features/package/package.html" class="btn-brand">
+            View Packages <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="chb-pricing">
+          <div class="chb-pricing__row">
+            <!-- Ingredient Pack -->
+            <a href="/features/package/package.html?cat=ingredient" class="chb-price-card">
+              <h5>Ingredient Pack</h5>
+              <div class="ph-image chb-price-card__img" style="overflow:hidden; border-radius: var(--radius-md);">
+                <img src="https://i.pinimg.com/736x/4c/54/ce/4c54cef214d30f41be6484750b47b88a.jpg" alt="Ingredient Pack" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <div class="chb-price-card__price">$16.50</div>
+              <p class="chb-price-card__unit">per pack</p>
+              <p class="chb-price-card__save">Save 15%</p>
+            </a>
+
+            <!-- Snack Pack -->
+            <a href="/features/package/package.html?cat=snack"
+              class="chb-price-card chb-price-card--popular">
+              <span class="chb-price-card__badge">Most Popular</span>
+              <h5>Snack Pack</h5>
+              <div class="ph-image chb-price-card__img" style="overflow:hidden; border-radius: var(--radius-md);">
+                <img src="https://i.pinimg.com/control1/1200x/17/20/17/172017696b480f6e1d478e089d4d0d0c.jpg" alt="Snack Pack" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <div class="chb-price-card__price">$12.50</div>
+              <p class="chb-price-card__unit">per pack</p>
+              <p class="chb-price-card__save">Save 12%</p>
+            </a>
+
+            <!-- Noodle Pack -->
+            <a href="/features/package/package.html?cat=noodle" class="chb-price-card">
+              <h5>Noodle Pack</h5>
+              <div class="ph-image chb-price-card__img" style="overflow:hidden; border-radius: var(--radius-md);">
+                <img src="https://i.pinimg.com/1200x/28/91/c6/2891c6779458e74cfa87c720fb01c720.jpg" alt="Noodle Pack" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <div class="chb-price-card__price">$18.30 <span class="strike">$22.90</span></div>
+              <p class="chb-price-card__unit">per pack</p>
+              <p class="chb-price-card__save">Save 20%</p>
+            </a>
+          </div>
+
+          <p class="chb-save__note"><i class="bi bi-leaf-fill"></i>The bigger the pack, the bigger the savings!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ingredients List Section -->
+    <section class="chb-ingredients">
+      <div class="container-xl">
+        <div class="section-head">
+          <h2 class="section-title">Our Ingredients</h2>
+          <p class="section-subtitle">Handpicked natural ingredients from local farmers</p>
+        </div>
+
+        <div class="chb-ingredients__row">
+          <a href="/features/product/product.html?c=ingredient&item=sea-salt" class="chb-ingredient">
+            <div class="ph-image chb-ingredient__img" style="overflow:hidden; border-radius: 50%;">
+              <img src="https://i.pinimg.com/1200x/13/6a/d8/136ad81856fb3c5739c2ff6dd89a92da.jpg" alt="Sea Salt" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <span>Sea Salt</span>
+          </a>
+          <a href="/features/product/product.html?c=ingredient&item=palm-sugar" class="chb-ingredient">
+            <div class="ph-image chb-ingredient__img" style="overflow:hidden; border-radius: 50%;">
+              <img src="https://i.pinimg.com/1200x/79/07/69/79076952f1db364deb335a67fc2e18ef.jpg" alt="Palm Sugar" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <span>Palm Sugar</span>
+          </a>
+          <a href="/features/product/product.html?c=ingredient&item=pepper" class="chb-ingredient">
+            <div class="ph-image chb-ingredient__img" style="overflow:hidden; border-radius: 50%;">
+              <img src="https://images.unsplash.com/photo-1641661548431-87172338d58c?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Kampot Pepper" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <span>Kampot Pepper</span>
+          </a>
+          <a href="/features/product/product.html?c=ingredient&item=coconut-oil" class="chb-ingredient">
+            <div class="ph-image chb-ingredient__img" style="overflow:hidden; border-radius: 50%;">
+              <img src="https://i.pinimg.com/1200x/31/d4/05/31d4052250855c45f6351d2937dbf39d.jpg" alt="Coconut Oil" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <span>Coconut Oil</span>
+          </a>
+          <a href="/features/product/product.html?c=ingredient&item=cassava-starch" class="chb-ingredient">
+            <div class="ph-image chb-ingredient__img" style="overflow:hidden; border-radius: 50%;">
+              <img src="https://i.pinimg.com/736x/f5/15/06/f5150627d9a349eca5871862a2d76aaa.jpg" alt="Cassava Starch" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <span>Cassava Starch</span>
+          </a>
+          <a href="/features/product/product.html?c=ingredient&item=mung-bean-flour" class="chb-ingredient">
+            <div class="ph-image chb-ingredient__img" style="overflow:hidden; border-radius: 50%;">
+              <img src="https://i.pinimg.com/1200x/6a/40/dd/6a40dd3d4ef1ebff710478629dad217f.jpg" alt="Mung Bean Flour" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <span>Mung Bean Flour</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Categories Section -->
+    <section class="chb-categories">
+      <div class="container-xl">
+        <div class="section-head">
+          <h2 class="section-title">Featured Product Categories</h2>
+        </div>
+
+        <div class="chb-categories__row">
+          <a href="/features/product/product.html?c=snack" class="chb-cat-card">
+            <div class="ph-image chb-cat-card__img" style="height:100%; overflow:hidden;">
+              <img src="https://i.pinimg.com/control1/1200x/38/e3/36/38e33699452541c27c52342cd85b8524.jpg" alt="Snacks Category" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <div class="chb-cat-card__body">
+              <h4>Snacks</h4>
+              <p>Healthy &amp; delicious local snacks</p>
+              <span class="btn-brand">See More <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="/features/product/product.html?c=noodle" class="chb-cat-card">
+            <div class="ph-image chb-cat-card__img" style="height:100%; overflow:hidden;">
+              <img src="https://i.pinimg.com/736x/c1/f9/ed/c1f9ed7b548fa47e50f19fb8cee9279f.jpg" alt="Noodles Category" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <div class="chb-cat-card__body">
+              <h4>Noodles</h4>
+              <p>Authentic local noodles for every meal</p>
+              <span class="btn-brand">See More <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="/features/product/product.html?c=ingredient" class="chb-cat-card">
+            <div class="ph-image chb-cat-card__img" style="height:100%; overflow:hidden;">
+              <img src="https://i.pinimg.com/736x/f9/6b/fe/f96bfe6f24240ac5699ae8e4380d87f3.jpg" alt="Ingredients Category" style="width:100%; height:100%; object-fit:cover;" />
+            </div>
+            <div class="chb-cat-card__body">
+              <h4>Ingredients</h4>
+              <p>Natural ingredients for your kitchen</p>
+              <span class="btn-brand">See More <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner CTA Section -->
+    <section class="chb-closing-wrap">
+      <div class="chb-closing">
+        <div class="ph-image chb-closing__img" style="overflow:hidden;">
+          <img src="https://i.pinimg.com/736x/d4/38/eb/d438eb3eefbdefb6ba9d87d1e2e24d05.jpg" alt="Local Cambodian Farmers" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="chb-closing__body">
+          <h2>Support Local. Eat Natural. Live Better. <i class="bi bi-leaf-fill"></i></h2>
+          <p>Thank you for supporting our local farmers and choosing natural ingredients.</p>
+          <a href="/features/package/package.html" class="btn-brand">Shop Now <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Container -->
+  <div id="chbFooterMount"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="shared/main.js"></script>
+  <script src="shared/utils.js"></script>
+  <script src="features/home/home.js"></script>
+</body>
+
+</html>

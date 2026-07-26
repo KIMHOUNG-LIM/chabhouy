@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile | Chabhouy</title>
+
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="../../shared/variables.css">
+  <link rel="stylesheet" href="../../shared/global.css">
+  <link rel="stylesheet" href="../../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../../components/footer/footer.css">
+  <link rel="stylesheet" href="../../shared/responsive.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+  <!-- Navigation Bar Container -->
+  <div id="chbNavbarMount"></div>
+
+  <!-- Profile Page Main Content -->
+  <main class="container-xl py-5">
+    <div class="container-xl">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>My Profile</span>
+      </nav>
+
+      <!-- Page heading -->
+      <div class="profile-page__head reveal">
+        <h1>My Profile <span class="leaf-wiggle">🌿</span></h1>
+        <p class="section-subtitle">Manage your account information, orders, and preferences.</p>
+      </div>
+
+      <div class="profile-layout">
+
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="profile-side reveal">
+          <div class="profile-side__card card-soft">
+            <nav class="profile-side__nav" aria-label="Profile sections">
+              <a href="#" class="is-active"><i class="fa-solid fa-house"></i> Overview</a>
+              <a href="#"><i class="fa-solid fa-lock"></i> Change Password</a>
+              <a href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+              <a href="#" class="profile-side__logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+            </nav>
+          </div>
+
+          <div class="refer-card">
+            <h3>Refer &amp; Earn <span class="khmer">🌿</span></h3>
+            <p>Invite your friends and earn exclusive rewards!</p>
+            <button class="btn-brand refer-card__btn" id="btn-invite-now">Invite Now <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </aside>
+
+        <!-- ============ MAIN COLUMN ============ -->
+        <div class="profile-main">
+
+          <!-- Profile hero -->
+          <section class="profile-hero card-soft reveal">
+            <div class="profile-hero__id">
+              <div class="profile-hero__avatar">
+                <div class="profile-hero__avatar-icon"><i class="bi bi-person-fill"></i></div>
+                <button class="profile-hero__avatar-edit" aria-label="Change photo"><i
+                    class="fa-solid fa-camera"></i></button>
+              </div>
+              <div class="profile-hero__info">
+                <div class="profile-hero__name-row">
+                  <h2 id="display-name">Sokunthea En</h2>
+                  <span class="badge badge--verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                </div>
+                <p><i class="fa-solid fa-envelope"></i> <span id="display-email">sokunthea.en@gmail.com</span></p>
+                <p><i class="fa-solid fa-phone"></i> <span id="display-phone-hero">+855 12 345 678</span></p>
+                <p class="profile-hero__member">Member since March 12, 2024</p>
+              </div>
+            </div>
+
+            <div class="rewards-card">
+              <span class="rewards-card__icon"><i class="bi bi-gift-fill"></i></span>
+              <p class="rewards-card__label">My Rewards</p>
+              <p class="rewards-card__points">320 <span>Points</span></p>
+              <button class="btn-outline-brand rewards-card__btn" id="btn-view-rewards">View Rewards</button>
+            </div>
+          </section>
+
+          <!-- Stats -->
+          <section class="stats-row reveal">
+            <div class="stat-card stat-card--green">
+              <span class="stat-card__icon"><i class="bi bi-bag-check-fill"></i></span>
+              <div>
+                <p class="stat-card__num">12</p>
+                <p class="stat-card__label">Total Orders</p>
+                <a href="#" class="stat-card__link">View all orders <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="stat-card stat-card--brown">
+              <span class="stat-card__icon"><i class="bi bi-truck"></i></span>
+              <div>
+                <p class="stat-card__num">3</p>
+                <p class="stat-card__label">Pending Orders</p>
+                <a href="../track-order/track-order.html" class="stat-card__link">Track orders <i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="stat-card stat-card--blue">
+              <span class="stat-card__icon"><i class="bi bi-heart-fill"></i></span>
+              <div>
+                <p class="stat-card__num">4</p>
+                <p class="stat-card__label">Wishlist Items</p>
+                <a href="#" class="stat-card__link">View wishlist <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Orders + Address -->
+          <section class="split-row reveal">
+
+            <div class="panel card-soft">
+              <div class="panel__head">
+                <h3>Recent Orders</h3>
+                <a href="#" class="panel__link">View All Orders <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+
+              <ul class="order-list" id="order-list">
+                <li class="order-item" tabindex="0" role="button" data-order="CHB12345">
+                  <span class="order-item__thumb order-item__thumb--veg"><i class="fa-solid fa-carrot"></i></span>
+                  <div class="order-item__info">
+                    <p class="order-item__id">Order #CHB12345</p>
+                    <p class="order-item__date">May 20, 2025</p>
+                  </div>
+                  <div class="order-item__meta">
+                    <span class="status-pill status-pill--delivered">Delivered</span>
+                    <p class="order-item__price">$28.50</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right order-item__chevron"></i>
+                </li>
+
+                <li class="order-item" tabindex="0" role="button" data-order="CHB12344">
+                  <span class="order-item__thumb order-item__thumb--snack"><i
+                      class="fa-solid fa-cookie-bite"></i></span>
+                  <div class="order-item__info">
+                    <p class="order-item__id">Order #CHB12344</p>
+                    <p class="order-item__date">May 15, 2025</p>
+                  </div>
+                  <div class="order-item__meta">
+                    <span class="status-pill status-pill--processing">Processing</span>
+                    <p class="order-item__price">$16.80</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right order-item__chevron"></i>
+                </li>
+
+                <li class="order-item" tabindex="0" role="button" data-order="CHB12343">
+                  <span class="order-item__thumb order-item__thumb--noodle"><i class="fa-solid fa-bowl-food"></i></span>
+                  <div class="order-item__info">
+                    <p class="order-item__id">Order #CHB12343</p>
+                    <p class="order-item__date">May 10, 2025</p>
+                  </div>
+                  <div class="order-item__meta">
+                    <span class="status-pill status-pill--cancelled">Cancelled</span>
+                    <p class="order-item__price">$12.30</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right order-item__chevron"></i>
+                </li>
+              </ul>
+            </div>
+
+            <div class="panel card-soft">
+              <div class="panel__head">
+                <h3>Default Address</h3>
+                <a href="#" class="panel__link" id="link-manage-addresses">Manage Addresses <i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="address-block">
+                <p class="address-block__row"><i class="fa-solid fa-location-dot"></i> <strong
+                    id="display-addr-label">Home</strong> <span class="badge badge--default">Default</span></p>
+                <p class="address-block__lines" id="display-addr-lines">#123, Street 271, Sangkat Boeung
+                  Tumpun,<br />Khan Meanchey, Phnom Penh,
+                  Cambodia</p>
+                <p class="address-block__phone" id="display-addr-phone"><i class="fa-solid fa-phone"></i> +855 12 345
+                  678</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Payment methods -->
+          <section class="panel card-soft reveal" id="payment-panel">
+            <div class="panel__head">
+              <h3>Payment Methods</h3>
+              <a href="#" class="panel__link" id="link-manage-cards">Manage Cards <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <ul class="payment-list" id="payment-list">
+              <li class="payment-item">
+                <span class="payment-item__logo payment-item__logo--visa">VISA</span>
+                <div class="payment-item__info">
+                  <p>VISA •••• 1234</p>
+                  <span>Expires 08/27</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+              </li>
+              <li class="payment-item">
+                <span class="payment-item__logo payment-item__logo--aba">ABA</span>
+                <div class="payment-item__info">
+                  <p>ABA PAY •••• 5678</p>
+                  <span>Expires 11/26</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Personal information -->
+          <section class="panel card-soft reveal">
+            <div class="panel__head">
+              <h3>Personal Information</h3>
+              <button class="btn-outline-brand" id="btn-edit-personal">Edit</button>
+            </div>
+            <div class="info-grid">
+              <div class="info-item">
+                <i class="fa-solid fa-user"></i>
+                <div><span>Full Name</span>
+                  <p id="info-fullname">Sokunthea En</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div><span>Email Address</span>
+                  <p id="info-email">sokunthea.en@gmail.com</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div><span>Phone Number</span>
+                  <p id="info-phone">+855 12 345 678</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-regular fa-calendar"></i>
+                <div><span>Date of Birth</span>
+                  <p id="info-dob">May 12, 1995</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-leaf"></i>
+                <div><span>Gender</span>
+                  <p id="info-gender">Female</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+
+  <!-- Referral Modal -->
+  <div class="modal" id="modal-invite">
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      <div class="text-center mb-3">
+        <div class="modal__emoji modal__emoji--bounce mb-2">🎁</div>
+        <h3 class="fw-bold">Refer &amp; Earn Rewards</h3>
+        <p class="modal__sub text-muted fs-sm">Share your unique referral link with your friends to earn points!</p>
+      </div>
+
+      <div class="referral-box p-3 bg-light border rounded-3 mb-3">
+        <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Your Referral Link</label>
+        <div class="input-group">
+          <input type="text" class="form-control fs-sm bg-white" id="referral-link-input" readonly
+            value="https://chb-farm.com/invite?ref=SOKUNTHEA2026">
+          <button class="btn btn-outline-success fs-sm fw-bold px-3" type="button" id="btn-copy-referral">
+            <i class="bi bi-copy"></i> Copy
+          </button>
+        </div>
+      </div>
+
+      <div class="modal__actions">
+        <button type="button" class="btn-brand w-100 py-2 fs-sm fw-bold" id="btn-done-copy" data-close-modal>Done
+          Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rewards Modal -->
+  <div class="modal modal--wide" id="modal-rewards">
+    <div class="modal__card text-start">
+      <button class="modal__close" data-close-modal aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      <div class="text-center mb-3">
+        <div class="modal__emoji modal__emoji--bounce mb-1" style="font-size: 2.8rem;">👑</div>
+        <h3 class="fw-bold mb-1">My Rewards &amp; Tier Benefits</h3>
+        <p class="modal__sub text-muted fs-sm">Earn points with every order &amp; enjoy cute exclusive perks!</p>
+      </div>
+
+      <!-- Current Balance Card & Progress Bar -->
+      <div class="p-3 mb-3 border-0 rounded-4 shadow-sm"
+        style="background: linear-gradient(135deg, #eef7ee 0%, #f4fbf4 100%);">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div>
+            <span class="badge bg-success text-white px-2 py-1 fs-xs text-uppercase fw-bold rounded-pill">✨ Silver
+              Member</span>
+            <h4 class="fw-bold mb-0 mt-1 text-success">320 <span class="fs-xs text-muted fw-normal">Points
+                Balance</span></h4>
+          </div>
+          <div class="text-end">
+            <span class="fs-xs text-muted fw-semibold">Next Unlock</span>
+            <p class="fw-bold mb-0 text-success fs-sm">500 Points</p>
+          </div>
+        </div>
+
+        <div class="progress mb-2" style="height: 10px; border-radius: 20px; background-color: #dbeede;">
+          <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+            style="width: 64%;" aria-valuenow="320" aria-valuemin="0" aria-valuemax="500"></div>
+        </div>
+        <p class="fs-xs text-muted mb-0 text-center">🌿 <strong>Only 180 points away</strong> from unlocking Gold Tier
+          perks!</p>
+      </div>
+
+      <!-- Tier Benefits List -->
+      <h5 class="fs-xs fw-bold text-uppercase text-muted mb-2 tracking-wider">Reward Tiers &amp; Unlocks</h5>
+      <div class="rewards-tiers-list d-flex flex-column gap-2 mb-3 text-start">
+
+        <!-- 320 Points Tier (Current) -->
+        <div class="p-3 border rounded-4 bg-white shadow-sm border-success border-2 text-start position-relative">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="fw-bold mb-0 text-success d-flex align-items-center gap-1"><i
+                class="bi bi-patch-check-fill text-success fs-6"></i> Current Tier (320 Points)</h6>
+            <span class="badge bg-success text-white px-2 py-1 rounded-pill fs-xs">Unlocked 🎉</span>
+          </div>
+          <ul class="list-unstyled fs-xs text-secondary mb-0 text-start d-flex flex-column gap-1">
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success fs-xs"></i> 5%
+              discount on all fresh produce &amp; packages</li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success fs-xs"></i> Free
+              standard delivery on orders over $25</li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success fs-xs"></i>
+              Special birthday bonus reward (50 points)</li>
+          </ul>
+        </div>
+
+        <!-- 500 Points Tier (Gold) -->
+        <div class="p-3 border rounded-4 bg-white shadow-sm border-warning text-start">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="fw-bold mb-0 text-warning-emphasis d-flex align-items-center gap-1"><i
+                class="bi bi-star-fill text-warning fs-6"></i> Gold Tier (500 Points)</h6>
+            <span
+              class="badge bg-warning-subtle text-warning-emphasis border border-warning px-2 py-1 rounded-pill fs-xs">Unlock
+              at 500 pts ⭐</span>
+          </div>
+          <ul class="list-unstyled fs-xs text-secondary mb-0 text-start d-flex flex-column gap-1">
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-stars text-warning fs-xs"></i> 10% discount on
+              all store items &amp; organic boxes</li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-stars text-warning fs-xs"></i> Free express
+              delivery on ALL orders</li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-stars text-warning fs-xs"></i> Priority customer
+              support &amp; weekly flash sale access</li>
+          </ul>
+        </div>
+
+        <!-- 1000 Points Tier (Platinum VIP) -->
+        <div class="p-3 border rounded-4 bg-white shadow-sm border-primary text-start">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="fw-bold mb-0 text-primary d-flex align-items-center gap-1"><i
+                class="bi bi-gem text-primary fs-6"></i> Platinum VIP Tier (1000 Points)</h6>
+            <span class="badge bg-primary-subtle text-primary border border-primary px-2 py-1 rounded-pill fs-xs">Unlock
+              at 1000 pts 💎</span>
+          </div>
+          <ul class="list-unstyled fs-xs text-secondary mb-0 text-start d-flex flex-column gap-1">
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-award-fill text-primary fs-xs"></i> 15% VIP
+              lifetime discount across all categories</li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-award-fill text-primary fs-xs"></i> Free monthly
+              curated organic gift box</li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-award-fill text-primary fs-xs"></i> Early access
+              to seasonal harvests &amp; exclusive items</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="modal__actions mt-3">
+        <button type="button" class="btn-brand w-100 py-2 fs-sm fw-bold rounded-pill" data-close-modal>Awesome, Got It!
+          ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div class="modal modal--wide" id="modal-order-details">
+    <div class="modal__card text-start">
+      <button class="modal__close" data-close-modal aria-label="Close"><i class="bi bi-x-lg"></i></button>
+
+      <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+        <div>
+          <span class="fs-xs text-muted text-uppercase fw-bold">Order Summary</span>
+          <h3 class="fw-bold mb-0 text-success" id="order-modal-id">Order #CHB12345</h3>
+          <span class="fs-xs text-muted" id="order-modal-date">Placed on May 20, 2025</span>
+        </div>
+        <span class="badge bg-success text-white px-3 py-2 fs-xs rounded-pill" id="order-modal-status">Delivered</span>
+      </div>
+
+      <!-- Items List -->
+      <h5 class="fs-xs fw-bold text-uppercase text-muted mb-2">Items Ordered</h5>
+      <div class="p-3 bg-light rounded-3 mb-3 d-flex flex-column gap-2" id="order-modal-items">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Summary & Delivery Info -->
+      <div class="row g-3 mb-3 fs-sm">
+        <div class="col-md-6">
+          <div class="p-3 border rounded-3 bg-white h-100">
+            <h6 class="fs-xs fw-bold text-uppercase text-muted mb-2"><i
+                class="bi bi-geo-alt-fill text-success me-1"></i> Delivery Address</h6>
+            <p class="mb-0 fw-semibold" id="order-modal-address">Home — #123, Street 271, Sangkat Boeung Tumpun, Phnom
+              Penh</p>
+            <p class="mb-0 fs-xs text-muted mt-1" id="order-modal-phone">+855 12 345 678</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 border rounded-3 bg-white h-100">
+            <h6 class="fs-xs fw-bold text-uppercase text-muted mb-2"><i
+                class="bi bi-credit-card-fill text-success me-1"></i> Payment Summary</h6>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Subtotal:</span>
+              <strong id="order-modal-subtotal">$26.00</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-1">
+              <span class="text-muted">Delivery Fee:</span>
+              <strong id="order-modal-delivery">Free</strong>
+            </div>
+            <div class="d-flex justify-content-between pt-2 border-top mt-2 fs-6">
+              <span class="fw-bold">Total Paid:</span>
+              <strong class="text-success fw-bold" id="order-modal-total">$28.50</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__actions mt-3">
+        <button type="button" class="btn-brand w-100 py-2 fs-sm fw-bold rounded-pill" data-close-modal>Close Order
+          Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manage Addresses Modal -->
+  <div class="modal modal--wide" id="modal-manage-addresses">
+    <div class="modal__card text-start">
+      <button class="modal__close" data-close-modal aria-label="Close"><i class="bi bi-x-lg"></i></button>
+
+      <div class="text-center mb-3">
+        <div class="modal__emoji modal__emoji--bounce mb-1" style="font-size: 2.5rem;">🏡</div>
+        <h3 class="fw-bold mb-1">Manage Delivery Addresses</h3>
+        <p class="modal__sub text-muted fs-sm">Select your default delivery address or edit your saved locations!</p>
+      </div>
+
+      <!-- Address List Container -->
+      <div class="address-manage-list d-flex flex-column gap-2 mb-3" id="modal-address-list">
+        <!-- Dynamically rendered by JS -->
+      </div>
+
+      <!-- Edit / Add Address Form Drawer -->
+      <div class="p-3 bg-light border rounded-4 mb-3" id="address-edit-box" style="display: none;">
+        <h6 class="fw-bold mb-2 text-success d-flex align-items-center gap-1" id="address-edit-title"><i
+            class="bi bi-pencil-square"></i> Edit Address</h6>
+        <form id="form-manage-address-item">
+          <input type="hidden" id="manage-addr-id" value="">
+          <div class="row g-2">
+            <div class="col-md-6">
+              <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Label
+                <input type="text" class="form-control fs-sm mt-1" id="manage-addr-label" required
+                  placeholder="Home, Office, Condo">
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Phone Number
+                <input type="text" class="form-control fs-sm mt-1" id="manage-addr-phone" required
+                  placeholder="+855 12 345 678">
+              </label>
+            </div>
+            <div class="col-12">
+              <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Full Street &amp; City Address
+                <input type="text" class="form-control fs-sm mt-1" id="manage-addr-lines" required
+                  placeholder="#123, Street 271, Sangkat Boeung Tumpun, Khan Meanchey, Phnom Penh">
+              </label>
+            </div>
+          </div>
+          <div class="d-flex gap-2 mt-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3"
+              id="btn-cancel-addr-edit">Cancel</button>
+            <button type="submit" class="btn btn-sm btn-success rounded-pill px-3 fw-bold">Save Changes ✨</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="d-flex gap-2 align-items-center">
+        <button type="button" class="btn btn-outline-success btn-sm rounded-pill px-3 fw-bold" id="btn-show-add-addr"><i
+            class="bi bi-plus-lg me-1"></i> Add Address</button>
+        <button type="button" class="btn-brand flex-grow-1 py-2 fs-sm fw-bold rounded-pill"
+          id="btn-save-manage-addresses" data-close-modal>Done &amp; Save Default ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manage Payment Cards Modal -->
+  <div class="modal modal--wide" id="modal-manage-cards">
+    <div class="modal__card text-start">
+      <button class="modal__close" data-close-modal aria-label="Close"><i class="bi bi-x-lg"></i></button>
+
+      <div class="text-center mb-3">
+        <div class="modal__emoji modal__emoji--bounce mb-1" style="font-size: 2.5rem;">💳</div>
+        <h3 class="fw-bold mb-1">Manage Payment Methods</h3>
+        <p class="modal__sub text-muted fs-sm">View or delete your saved cards, or add a new payment method!</p>
+      </div>
+
+      <!-- Saved Cards Container -->
+      <div class="cards-manage-list d-flex flex-column gap-2 mb-3" id="modal-cards-list">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Add Card Form Drawer -->
+      <div class="p-3 bg-light border rounded-4 mb-3" id="card-add-box" style="display: none;">
+        <h6 class="fw-bold mb-2 text-success d-flex align-items-center gap-1"><i class="bi bi-plus-circle-fill"></i> Add
+          New Payment Card</h6>
+        <form id="form-manage-card-add">
+          <div class="row g-2">
+            <div class="col-md-6">
+              <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Card Type
+                <select class="form-select fs-sm mt-1" id="manage-card-type" required>
+                  <option value="VISA">VISA</option>
+                  <option value="Mastercard">Mastercard</option>
+                  <option value="ABA PAY">ABA PAY</option>
+                  <option value="KHQR">KHQR</option>
+                </select>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Card Number / ID
+                <input type="text" class="form-control fs-sm mt-1" id="manage-card-number" required
+                  placeholder="•••• •••• •••• 1234">
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fs-xs text-uppercase fw-bold text-muted mb-1">Expiry Date
+                <input type="text" class="form-control fs-sm mt-1" id="manage-card-expiry" required placeholder="MM/YY">
+              </label>
+            </div>
+          </div>
+          <div class="d-flex gap-2 mt-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3"
+              id="btn-cancel-card-add">Cancel</button>
+            <button type="submit" class="btn btn-sm btn-success rounded-pill px-3 fw-bold">Save New Card ✨</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="d-flex gap-2 align-items-center">
+        <button type="button" class="btn btn-outline-success btn-sm rounded-pill px-3 fw-bold" id="btn-show-add-card"><i
+            class="bi bi-plus-lg me-1"></i> Add Card</button>
+        <button type="button" class="btn-brand flex-grow-1 py-2 fs-sm fw-bold rounded-pill" id="btn-save-manage-cards"
+          data-close-modal>Done &amp; Save ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Personal Information Modal -->
+  <div class="modal" id="modal-edit-personal">
+    <div class="modal__card text-start">
+      <button class="modal__close" data-close-modal aria-label="Close"><i class="bi bi-x-lg"></i></button>
+
+      <!-- Edit Form View -->
+      <div id="personal-edit-form-view">
+        <div class="text-center mb-3">
+          <div class="modal__emoji modal__emoji--bounce mb-1" style="font-size: 2.5rem;">👤</div>
+          <h3 class="fw-bold mb-1">Edit Personal Information</h3>
+          <p class="modal__sub text-muted fs-sm">Update your account details below!</p>
+        </div>
+
+        <form class="modal__form" id="form-edit-personal" novalidate>
+          <div class="mb-3">
+            <label for="input-edit-fullname" class="form-label fs-xs text-uppercase fw-bold text-muted mb-1 w-100">Full
+              Name</label>
+            <input type="text" class="form-control fs-sm" id="input-edit-fullname" required
+              placeholder="Enter full name">
+            <div class="field-eval-msg fs-xs mt-1 text-start" id="eval-fullname"></div>
+          </div>
+          <div class="mb-3">
+            <label for="input-edit-email" class="form-label fs-xs text-uppercase fw-bold text-muted mb-1 w-100">Email
+              Address</label>
+            <input type="email" class="form-control fs-sm" id="input-edit-email" required
+              placeholder="Enter email address">
+            <div class="field-eval-msg fs-xs mt-1 text-start" id="eval-email"></div>
+          </div>
+          <div class="mb-3">
+            <label for="input-edit-phone" class="form-label fs-xs text-uppercase fw-bold text-muted mb-1 w-100">Phone
+              Number</label>
+            <input type="text" class="form-control fs-sm" id="input-edit-phone" required
+              placeholder="Enter phone number">
+            <div class="field-eval-msg fs-xs mt-1 text-start" id="eval-phone"></div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label for="input-edit-dob" class="form-label fs-xs text-uppercase fw-bold text-muted mb-1 w-100">Date of
+                Birth</label>
+              <input type="text" class="form-control fs-sm" id="input-edit-dob" required
+                placeholder="e.g. May 12, 1995">
+              <div class="field-eval-msg fs-xs mt-1 text-start" id="eval-dob"></div>
+            </div>
+            <div class="col-md-6">
+              <label for="input-edit-gender"
+                class="form-label fs-xs text-uppercase fw-bold text-muted mb-1 w-100">Gender</label>
+              <select class="form-select fs-sm" id="input-edit-gender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="field-eval-msg fs-xs mt-1 text-start text-success" id="eval-gender"><i
+                  class="bi bi-check-circle-fill me-1"></i>Looks great! ✨</div>
+            </div>
+          </div>
+
+          <div class="modal__actions">
+            <button type="button" class="btn-outline-brand rounded-pill" data-close-modal>Cancel</button>
+            <button type="submit" class="btn-brand flex-grow-1 rounded-pill fw-bold" id="btn-save-personal">Save &amp;
+              Done ✨</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Cute Evaluation & Success View -->
+      <div id="personal-edit-success-view" class="text-center py-4" style="display: none;">
+        <div class="cute-success-check text-success display-3 mb-2"><i class="bi bi-check-circle-fill"></i></div>
+        <h3 class="fw-bold text-success mb-1">Evaluating &amp; Updating... 🎉</h3>
+        <p class="text-muted fs-sm mb-3">Your profile information has been evaluated and updated successfully ✨</p>
+        <div class="d-flex align-items-center justify-content-center gap-2 text-success fs-xs fw-bold">
+          <div class="spinner-border spinner-border-sm" role="status"></div>
+          <span>Saving to your account...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer Container -->
+  <div id="chbFooterMount"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../shared/main.js"></script>
+  <script src="../../shared/utils.js"></script>
+  <script src="profile.js"></script>
+</body>
+
+</html>

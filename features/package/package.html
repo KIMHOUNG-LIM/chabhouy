@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Ingredient Pack | Chabhouy</title>
+
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="../../shared/variables.css">
+  <link rel="stylesheet" href="../../shared/global.css">
+  <link rel="stylesheet" href="../../components/navbar/navbar.css">
+  <link rel="stylesheet" href="../../components/footer/footer.css">
+  <link rel="stylesheet" href="../../shared/responsive.css">
+  <link rel="stylesheet" href="package.css">
+</head>
+
+<body>
+  <!-- Navigation Bar Container -->
+  <div id="chbNavbarMount"></div>
+
+  <!-- Packages Page Main Content -->
+  <main class="pkg-page">
+
+    <!-- Breadcrumb + category tabs -->
+    <div class="container-xl">
+      <div class="pkg-top-row">
+        <p class="pkg-breadcrumb">
+          <a href="../../index.html">Home</a>
+          <i class="bi bi-chevron-right"></i>
+          <span class="current" id="pkgBreadcrumbCurrent">Family Pack</span>
+        </p>
+
+        <div class="pkg-tabs" id="pkgTabs">
+          <!-- Ingredient / Snack / Noodle buttons are rendered by package.js -->
+        </div>
+      </div>
+
+      <!-- Product hero: gallery + purchase details -->
+      <div class="pkg-hero">
+
+        <!-- Gallery -->
+        <div class="pkg-gallery">
+          <div class="ph-image pkg-gallery-main" id="pkgGalleryMain">
+            <span class="pkg-badge">Most Popular</span>
+            <i class="bi bi-leaf"></i>
+          </div>
+
+          <div class="pkg-thumbs">
+            <button type="button" class="pkg-thumb-arrow" id="pkgThumbPrev" aria-label="Previous image">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="pkg-thumb-track" id="pkgThumbTrack">
+              <!-- Thumbnails rendered by package.js -->
+            </div>
+            <button type="button" class="pkg-thumb-arrow" id="pkgThumbNext" aria-label="Next image">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="pkg-details">
+          <h1 class="pkg-title">
+            <span id="pkgTitle">Family Ingredient Pack</span>
+            <i class="bi bi-leaf-fill leaf"></i>
+          </h1>
+          <p class="pkg-desc" id="pkgSubtitle">Everything you need for flavorful, healthy meals.</p>
+
+          <div class="pkg-trust-row" id="pkgTrustRow">
+            <!-- Trust badges rendered by package.js -->
+          </div>
+
+          <p class="pkg-block-label">What's Included</p>
+          <div class="pkg-included-grid" id="pkgIncludedGrid">
+            <!-- Included items rendered by package.js -->
+          </div>
+
+          <div class="pkg-savings">
+            <p class="pkg-savings-title">Save Up To <span id="pkgSavingsPercent">15%</span></p>
+            <p class="pkg-savings-sub">The more you buy, the more you save!</p>
+            <div class="pkg-savings-row">
+              <div class="pkg-savings-col">
+                <small>Buy individually</small>
+                <strong id="pkgIndividualPrice">$19.40</strong>
+              </div>
+              <i class="bi bi-arrow-right pkg-savings-arrow"></i>
+              <div class="pkg-savings-col is-highlight">
+                <div>
+                  <small>In this pack</small>
+                  <strong id="pkgPackPrice">$16.50</strong>
+                </div>
+                <span class="pkg-save-tag" id="pkgSaveAmount">Save $2.90</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pkg-buy-row">
+            <p class="pkg-price">
+              <span id="pkgPriceValue">$16.50</span> <sub>per pack</sub>
+            </p>
+
+            <div class="pkg-qty-stepper">
+              <button type="button" id="pkgQtyMinus" aria-label="Decrease quantity">–</button>
+              <span id="pkgQtyValue">1</span>
+              <button type="button" id="pkgQtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+
+            <div class="pkg-buy-actions">
+              <button type="button" class="btn-brand" id="pkgAddToCart">
+                <i class="bi bi-cart3"></i> Add to Cart
+              </button>
+              <button type="button" class="btn-outline-brand" id="pkgBuyNow">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfect For / How to Use -->
+    <section class="pkg-info-section">
+      <div class="container-xl">
+        <div class="pkg-info-grid">
+          <div class="pkg-info-card">
+            <h3>Perfect For</h3>
+            <div class="pkg-perfect-grid" id="pkgPerfectGrid">
+              <!-- Rendered by package.js -->
+            </div>
+          </div>
+
+          <div class="pkg-info-card">
+            <h3>How to Use</h3>
+            <div class="pkg-howto">
+              <ol class="pkg-howto-steps" id="pkgHowToSteps">
+                <!-- Rendered by package.js -->
+              </ol>
+              <div class="ph-image pkg-howto-image" id="pkgHowToImage"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bundle deals -->
+    <section class="pkg-bundle-section">
+      <div class="container-xl">
+        <div class="pkg-bundle">
+          <div class="pkg-bundle-intro">
+            <h2>The More You Buy,<br>The More You Save!</h2>
+            <p>Mix and match any packs to unlock bigger discounts.</p>
+            <a href="#" class="btn-brand">
+              Shop All Packages <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="pkg-tier-grid" id="pkgTierGrid">
+            <!-- Rendered by package.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Natural ingredients strip -->
+    <section class="pkg-strip-section">
+      <div class="container-xl">
+        <div class="pkg-strip-head">
+          <h3><i class="bi bi-leaf-fill leaf"></i> <span id="pkgStripTitle">Made with Natural Ingredients</span></h3>
+          <p id="pkgStripSubtitle">No preservatives, no artificial colors, just real goodness.</p>
+        </div>
+        <div class="pkg-strip-row" id="pkgStripRow">
+          <!-- Rendered by package.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Container -->
+  <div id="chbFooterMount"></div>
+
+  <!-- JavaScript Libraries & Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../shared/main.js"></script>
+  <script src="../../shared/utils.js"></script>
+  <script src="package.js"></script>
+</body>
+
+</html>
