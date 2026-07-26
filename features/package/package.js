@@ -73,13 +73,13 @@ const packageData = {
         breadcrumb: "Family Snack Pack",
         title: "Family Snack Pack",
         subtitle: "Natural snacks the whole family can enjoy, anytime.",
-        mainImage: "https://i.pinimg.com/control1/1200x/17/20/17/172017696b480f6e1d478e089d4d0d0c.jpg",
+        mainImage: "https://i.pinimg.com/1200x/17/20/17/172017696b480f6e1d478e089d4d0d0c.jpg",
         galleryImages: [
-            "https://i.pinimg.com/control1/1200x/17/20/17/172017696b480f6e1d478e089d4d0d0c.jpg",
-            "https://i.pinimg.com/control1/1200x/38/e3/36/38e33699452541c27c52342cd85b8524.jpg",
-            "https://i.pinimg.com/control1/1200x/4e/20/f9/4e20f987f4bea0ac5bdc0d4a430e6074.jpg",
-            "https://i.pinimg.com/control1/1200x/d5/bc/34/d5bc3412866fac0443e206568a55097a.jpg",
-            "https://i.pinimg.com/control1/1200x/e6/70/98/e670984bb961aeb41b171b3ef75a1679.jpg"
+            "https://i.pinimg.com/1200x/17/20/17/172017696b480f6e1d478e089d4d0d0c.jpg",
+            "https://i.pinimg.com/1200x/38/e3/36/38e33699452541c27c52342cd85b8524.jpg",
+            "https://i.pinimg.com/1200x/4e/20/f9/4e20f987f4bea0ac5bdc0d4a430e6074.jpg",
+            "https://i.pinimg.com/1200x/d5/bc/34/d5bc3412866fac0443e206568a55097a.jpg",
+            "https://i.pinimg.com/1200x/e6/70/98/e670984bb961aeb41b171b3ef75a1679.jpg"
         ],
         trustBadges: [
             { icon: "bi-flower1", title: "100% Natural", caption: "No preservatives" },
@@ -136,7 +136,7 @@ const packageData = {
             "https://i.pinimg.com/1200x/28/91/c6/2891c6779458e74cfa87c720fb01c720.jpg",
             "https://i.pinimg.com/736x/c1/f9/ed/c1f9ed7b548fa47e50f19fb8cee9279f.jpg",
             "https://i.pinimg.com/1200x/89/da/00/89da00e88071ce6b870c278598cfa3b7.jpg",
-            "https://i.pinimg.com/control1/736x/2d/04/9b/2d049b9e9228737d4cec0dbfebb23f6c.jpg",
+            "https://i.pinimg.com/736x/2d/04/9b/2d049b9e9228737d4cec0dbfebb23f6c.jpg",
             "https://i.pinimg.com/736x/bd/b3/0f/bdb30f89b94a228bb8652d273e440011.jpg"
         ],
         trustBadges: [

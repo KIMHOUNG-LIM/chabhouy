@@ -1,8 +1,3 @@
-/* ==========================================================================
-   ChabHouy — Product Listing Page Logic
-   Beginner-friendly JavaScript. No build tools, no frameworks — just plain
-   DOM code so it's easy to read, extend, and swap for real API data later.
-   ========================================================================== */
 
 /* ------------------------------------------------------------------------
    1. PRODUCT DATA
@@ -27,7 +22,7 @@ const CHB_PRODUCTS = [
 
     { id: 9, category: "noodle", name: "Kampot Pepper Noodles", desc: "Dried rice noodles infused with cracked Kampot pepper.", ingredients: ["Rice", "Pepper"], province: "Kampot", price: 2.90, unit: "250g", rating: 4.7, reviews: 152, isBestSeller: true, icon: "bi-egg-fried", dateAdded: "2026-04-30", image: "https://i.pinimg.com/1200x/89/da/00/89da00e88071ce6b870c278598cfa3b7.jpg" },
     { id: 10, category: "noodle", name: "Cassava Glass Noodles", desc: "Chewy, gluten-free noodles made from pure cassava starch.", ingredients: ["Cassava"], province: "Battambang", price: 2.60, unit: "200g", rating: 4.1, reviews: 44, icon: "bi-egg-fried", dateAdded: "2026-03-05", image: "https://i.pinimg.com/736x/bd/b3/0f/bdb30f89b94a228bb8652d273e440011.jpg" },
-    { id: 11, category: "noodle", name: "Coconut Milk Noodles", desc: "Soft rice noodles pre-seasoned with coconut milk broth base.", ingredients: ["Rice", "Coconut"], province: "Kampot", price: 3.30, originalPrice: 4.00, unit: "300g", rating: 4.3, reviews: 59, icon: "bi-egg-fried", dateAdded: "2026-06-18", image: "https://i.pinimg.com/control1/736x/2d/04/9b/2d049b9e9228737d4cec0dbfebb23f6c.jpg" },
+    { id: 11, category: "noodle", name: "Coconut Milk Noodles", desc: "Soft rice noodles pre-seasoned with coconut milk broth base.", ingredients: ["Rice", "Coconut"], province: "Kampot", price: 3.30, originalPrice: 4.00, unit: "300g", rating: 4.3, reviews: 59, icon: "bi-egg-fried", dateAdded: "2026-06-18", image: "https://i.pinimg.com/736x/2d/04/9b/2d049b9e9228737d4cec0dbfebb23f6c.jpg" },
     { id: 12, category: "noodle", name: "Mung Bean Vermicelli", desc: "Thin, silky vermicelli made from 100% mung bean starch.", ingredients: ["Mung Bean"], province: "Takeo", price: 2.75, unit: "200g", rating: 4.0, reviews: 27, icon: "bi-egg-fried", dateAdded: "2026-02-02", image: "https://i.pinimg.com/1200x/14/89/72/14897276df17db8a8bd7743980226acd.jpg" },
 
     { id: 13, category: "ingredient", name: "Kampot Black Peppercorns", desc: "Sun-dried whole peppercorns with a bright, floral heat.", ingredients: ["Pepper"], province: "Kampot", price: 5.50, unit: "100g", rating: 4.9, reviews: 210, isBestSeller: true, icon: "bi-flower2", dateAdded: "2026-05-08", image: "https://images.unsplash.com/photo-1641661548431-87172338d58c?fm=jpg&q=80&w=1200&auto=format&fit=crop" },
@@ -42,7 +37,7 @@ const CHB_PRODUCTS = [
         desc: "A curated mix of our four best-selling chips, perfect for sharing.",
         ingredients: ["Banana", "Sweet Potato", "Coconut", "Cassava"], province: "Mixed Provinces",
         price: 11.90, originalPrice: 14.80, unit: "bundle", rating: 4.8, reviews: 96,
-        isBestSeller: true, icon: "bi-box-seam", dateAdded: "2026-06-05", image: "https://i.pinimg.com/control1/1200x/38/e3/36/38e33699452541c27c52342cd85b8524.jpg",
+        isBestSeller: true, icon: "bi-box-seam", dateAdded: "2026-06-05", image: "https://i.pinimg.com/1200x/38/e3/36/38e33699452541c27c52342cd85b8524.jpg",
         included: ["Banana Chips Original (100g)", "Sweet Potato Chips (100g)", "Coconut Chips (80g)", "Cassava Chips (100g)"]
     },
     {
@@ -582,6 +577,11 @@ function chbClearAllFilters() {
    8. INIT
    ------------------------------------------------------------------------ */
 document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get("cat") || urlParams.get("c");
+    if (catParam) {
+        chbSetCategory(catParam);
+    }
     chbBuildFilterLists();
     chbWireEvents();
     chbUpdatePage();

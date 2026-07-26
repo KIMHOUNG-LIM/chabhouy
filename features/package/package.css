@@ -637,10 +637,18 @@
    width: 64px;
    height: 64px;
    border-radius: 50%;
+   background: var(--color-white);
+   border: 1.5px solid var(--color-border);
+   box-shadow: var(--shadow-soft);
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .pkg-strip-item .ph-image i {
-   font-size: 1.25rem;
+   font-size: 1.6rem !important;
+   color: var(--color-dark-green) !important;
+   opacity: 1 !important;
 }
 
 .pkg-strip-item span {
