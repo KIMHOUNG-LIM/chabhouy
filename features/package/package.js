@@ -1,11 +1,3 @@
-/* ==========================================================================
-   Package Page — package.js
-   Plain vanilla JavaScript: no frameworks, no build step.
-   Everything on this page comes from the "packageData" object below.
-   Switching tabs (Ingredient / Snack / Noodle) simply swaps which
-   part of that object we render into the page.
-   ========================================================================== */
-
 // 1) All the content for each category lives here.
 //    Want to change the price, items, or copy? Edit this object only.
 const packageData = {

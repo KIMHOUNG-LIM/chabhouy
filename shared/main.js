@@ -13,7 +13,7 @@ function getProjectRoot() {
         return new URL('../', scriptSrc).href;
     } catch (e) {
         return './';
-    }
+    } // put this function to fix the problem 404 on github page
 }
 
 const PROJECT_ROOT = getProjectRoot();
@@ -75,13 +75,13 @@ function highlightActiveNavLink() {
 
         // Match home page
         const isHome = (currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.html')) && targetPath.includes('index.html');
-        
+
         // Match products page
         const isProducts = (currentPath.includes('product.html') || currentPath.includes('category.html')) && targetPath.includes('product.html');
 
         // Match package page
         const isPackage = currentPath.includes('package.html') && targetPath.includes('package.html');
-        
+
         // Match our story page
         const isStory = currentPath.includes('our-story.html') && targetPath.includes('our-story.html');
 
