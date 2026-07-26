@@ -360,7 +360,7 @@
     overflow: hidden;
 }
 
-.chb-card-media i {
+.chb-card-media > i {
     font-size: 2.75rem;
     color: var(--color-brown-light);
     opacity: 0.6;
@@ -413,23 +413,52 @@
     position: absolute;
     bottom: 0.75rem;
     right: 0.75rem;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: rgba(248, 244, 236, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(228, 220, 200, 0.9);
+    box-shadow: 0 2px 8px rgba(35, 40, 31, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-ink-soft);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+    z-index: 5;
+    padding: 0;
 }
 
-.chb-card-wishlist:hover,
+.chb-card-wishlist i {
+    font-size: 1.25rem !important;
+    color: #DC2626 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    display: block !important;
+    transition: transform var(--transition-fast);
+}
+
+.chb-card-wishlist:hover {
+    background: #F8F4EC;
+    border-color: #DC2626;
+    transform: scale(1.08);
+}
+
+.chb-card-wishlist:hover i {
+    transform: scale(1.15);
+}
+
 .chb-card-wishlist.active {
-    color: var(--color-highlight);
-    transform: scale(1.1);
+    background: #F8F4EC;
+    border-color: rgba(220, 38, 38, 0.4);
+}
+
+.chb-card-wishlist.active i {
+    color: #DC2626 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: scale(1.12);
 }
 
 .chb-card-body {
