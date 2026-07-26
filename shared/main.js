@@ -5,14 +5,58 @@
    ========================================================================== */
 
 // Helper function to fetch and insert an HTML component into a page element
+// Determine project root directory dynamically based on main.js location
+function getProjectRoot() {
+    const scriptSrc = document.currentScript ? document.currentScript.src : window.location.href;
+    try {
+        // Since main.js is located at <root>/shared/main.js, going up one directory ('../') yields <root>/
+        return new URL('../', scriptSrc).href;
+    } catch (e) {
+        return './';
+    }
+}
+
+const PROJECT_ROOT = getProjectRoot();
+
+// Helper function to resolve relative URLs in injected navbar/footer components
+function fixComponentLinks(mountElement) {
+    if (!mountElement) return;
+    const links = mountElement.querySelectorAll('a[href]');
+    links.forEach(link => {
+        let href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+            return;
+        }
+        if (href.startsWith('/')) {
+            href = href.slice(1);
+        }
+        try {
+            link.setAttribute('href', new URL(href, PROJECT_ROOT).href);
+        } catch (e) {
+            // Fallback: leave as is
+        }
+    });
+}
+
+// Helper function to fetch and insert an HTML component into a page element
 async function loadComponent(selector, filepath) {
     const mountElement = document.querySelector(selector);
     if (!mountElement) return;
 
     try {
-        const response = await fetch(filepath);
+        let resolvedPath = filepath;
+        if (filepath.startsWith('/') || !filepath.startsWith('http')) {
+            const cleanPath = filepath.startsWith('/') ? filepath.slice(1) : filepath;
+            resolvedPath = new URL(cleanPath, PROJECT_ROOT).href;
+        }
+
+        const response = await fetch(resolvedPath);
+        if (!response.ok) {
+            throw new Error(`HTTP status ${response.status}`);
+        }
         const htmlText = await response.text();
         mountElement.innerHTML = htmlText;
+        fixComponentLinks(mountElement);
     } catch (error) {
         console.error("Failed to load component from " + filepath, error);
     }
@@ -234,10 +278,10 @@ function setupScrollReveal() {
 
 // Initialize application when DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', async function () {
-    // Load navbar and footer partials into mount elements
+    // Load navbar and footer partials into mount elements using project relative paths
     await Promise.all([
-        loadComponent('#chbNavbarMount', '/components/navbar/navbar.html'),
-        loadComponent('#chbFooterMount', '/components/footer/footer.html')
+        loadComponent('#chbNavbarMount', 'components/navbar/navbar.html'),
+        loadComponent('#chbFooterMount', 'components/footer/footer.html')
     ]);
 
     // Initialize interactive features

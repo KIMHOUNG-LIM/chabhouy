@@ -460,10 +460,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (clearCartBtn) clearCartBtn.addEventListener('click', () => { cart = []; renderCart(); });
 
   const continueBtn = document.getElementById('continueShoppingBtn');
-  if (continueBtn) continueBtn.addEventListener('click', () => { window.location.href = '/features/product/product.html'; });
+  if (continueBtn) continueBtn.addEventListener('click', () => { window.location.href = '../product/product.html'; });
 
   const emptyContinueBtn = document.getElementById('emptyContinueBtn');
-  if (emptyContinueBtn) emptyContinueBtn.addEventListener('click', () => { window.location.href = '/features/product/product.html'; });
+  if (emptyContinueBtn) emptyContinueBtn.addEventListener('click', () => { window.location.href = '../product/product.html'; });
 
   const checkoutBtn = document.getElementById('checkoutBtn');
   if (checkoutBtn) {
