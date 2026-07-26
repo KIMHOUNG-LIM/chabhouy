@@ -244,12 +244,14 @@
 
 /* Tablet Responsive Breakpoint (768px - 1024px) */
 @media (max-width: 1024px) and (min-width: 768px) {
+
     .cart-table-head,
     .cart-row {
-        grid-template-columns: 2.3fr 1fr 1.3fr 1fr 40px;
+        grid-template-columns: 2.3fr 1fr 1.3fr 1fr 50px;
         gap: 12px;
-        padding: 16px 18px;
     }
+
+
 }
 
 /* Mobile Responsive Breakpoint (< 768px) */
@@ -266,7 +268,7 @@
             "price   price"
             "qty     total";
         gap: 12px 14px;
-        padding: 18px 16px;
+        /* padding: 18px 16px; */
         position: relative;
     }
 
