@@ -42,7 +42,6 @@ function renderCart() {
 
   rowsEl.innerHTML = cart.map(item => `
     <div class="cart-row" data-id="${item.id}">
-      <button type="button" class="remove-btn" aria-label="Remove item" title="Remove item"><i class="bi bi-trash3-fill"></i></button>
       <div class="cart-product">
         <div class="cart-product-img">${item.icon}</div>
         <div class="cart-product-info">
@@ -51,17 +50,26 @@ function renderCart() {
           <span class="stock-tag">${item.stock}</span>
         </div>
       </div>
-      <div class="cart-price">${formatMoney(item.price)}</div>
-      <div class="cart-qty-total-wrap">
+      <div class="cart-price">
+        <span class="cart-cell-label">Price:</span>
+        <span class="cart-price-val">${formatMoney(item.price)}</span>
+      </div>
+      <div class="cart-qty">
+        <span class="cart-cell-label">Qty:</span>
         <div class="qty-control">
           <button type="button" class="qty-minus" aria-label="Decrease quantity">−</button>
           <span>${item.qty}</span>
           <button type="button" class="qty-plus" aria-label="Increase quantity">+</button>
         </div>
-        <div class="cart-total">
-          <span class="cart-total-label">Total:</span>
-          <strong>${formatMoney(item.price * item.qty)}</strong>
-        </div>
+      </div>
+      <div class="cart-total">
+        <span class="cart-cell-label">Total:</span>
+        <strong>${formatMoney(item.price * item.qty)}</strong>
+      </div>
+      <div class="cart-action">
+        <button type="button" class="remove-btn" aria-label="Remove item" title="Remove item">
+          <i class="bi bi-trash3-fill"></i>
+        </button>
       </div>
     </div>
   `).join('');
@@ -443,13 +451,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const item = cart.find(i => i.id === id);
       if (!item) return;
 
-      if (e.target.classList.contains('qty-plus')) {
+      if (e.target.closest('.qty-plus')) {
         item.qty++;
         renderCart();
-      } else if (e.target.classList.contains('qty-minus')) {
+      } else if (e.target.closest('.qty-minus')) {
         item.qty = Math.max(1, item.qty - 1);
         renderCart();
-      } else if (e.target.classList.contains('remove-btn')) {
+      } else if (e.target.closest('.remove-btn')) {
         cart = cart.filter(i => i.id !== id);
         renderCart();
       }
