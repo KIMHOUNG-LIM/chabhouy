@@ -547,55 +547,6 @@
     margin: 0 auto;
 }
 
-/* ---------- Feature Strip ---------- */
-.feature-strip {
-    background: var(--color-cream-soft);
-    border-top: 1px solid var(--color-border);
-    padding: 34px 0;
-    margin-top: 60px;
-}
-
-.feature-strip .feature-grid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex: 1;
-    min-width: 220px;
-}
-
-.feature-item .ic {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-dark-green);
-    font-size: 1.3rem;
-    box-shadow: var(--shadow-soft);
-    flex-shrink: 0;
-}
-
-.feature-item h4 {
-    margin: 0 0 2px;
-    font-size: var(--fs-sm);
-    font-weight: 700;
-}
-
-.feature-item p {
-    margin: 0;
-    font-size: var(--fs-xs);
-    color: var(--color-ink-soft);
-}
-
 /* ---------- Modal Shared Overlay ---------- */
 .modal-overlay {
     position: fixed;
