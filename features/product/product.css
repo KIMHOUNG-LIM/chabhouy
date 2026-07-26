@@ -360,7 +360,7 @@
     overflow: hidden;
 }
 
-.chb-card-media > i {
+.chb-card-media>i {
     font-size: 2.75rem;
     color: var(--color-brown-light);
     opacity: 0.6;
@@ -767,11 +767,12 @@
 
     #chbFilterSidebar.open {
         transform: translateX(0);
+
     }
 
     .chb-filter-panel {
         box-shadow: none;
-        padding: 0.5rem 0;
+        padding: 0.8rem;
     }
 
     .chb-filter-backdrop {
